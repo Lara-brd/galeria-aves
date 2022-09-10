@@ -8,24 +8,36 @@
 //defindicion de paletas
 $my-primary: mat.define-palette(palette.$green);
 $my-accent: mat.define-palette(palette.$yellow, A200, A100, A400);
+// $my-typography:mat.define-typography-config(
+
+// );
+
 
 $my-theme: mat.define-dark-theme((
   color:(
     primary: $my-primary,
     accent: $my-accent
-  )
+  ),
+  // typography: $my-typography,
+
 ));
 
 @include mat.all-component-themes($my-theme);
 
+:root {
+  // background: pink;
+  --primary:#718C85;
+}
 
+
+$primary:var(--primary);
 
 
 
 
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif }
 
 .spacer{
   flex:1 1 auto;
@@ -42,6 +54,44 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 ::-webkit-scrollbar-thumb {
   background: rgb(20, 20, 21);
   border-radius: 10px;
+}
+
+
+// ///////////////////////////fonts
+
+
+@mixin text ($color, $size){
+  font-family:'Libre Baskerville', serif;
+  color:$color;
+  font-size:$size;
+  font-weight: 300;
+}
+
+
+.title-brd-1{
+  @include text(var(--primary), 2.5rem);
+}
+
+.title-brd-2{
+  @include text(rgba(255, 255, 255, 0.851), 2.5rem);
+}
+
+.weight-4{
+  font-weight: 400;
+}
+
+
+
+///////////////////////////////////////////////////
+
+
+.center{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.m-width-1200{
+  max-width: 1200px;
 }
 
 

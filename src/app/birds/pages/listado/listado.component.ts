@@ -6,6 +6,10 @@ import { BirdsService } from '../../services/birds.service';
   selector: 'app-listado',
   templateUrl: './listado.component.html',
   styles: [`
+    h1{
+      width:1200px;
+    }
+  
   `]
 })
 export class ListadoComponent implements OnInit {

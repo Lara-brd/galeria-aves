@@ -1,7 +1,7 @@
 
   <mat-card>
     <mat-card-header>
-      <mat-card-title>{{bird.nombre}}</mat-card-title>
+      <mat-card-title>{{bird.nombre }}</mat-card-title>
       <mat-card-subtitle>{{ bird.nombre_cientifico }}</mat-card-subtitle>
     </mat-card-header>
   
@@ -9,19 +9,20 @@
     <img mat-card-image [src]="bird | imagen">
   
     <mat-card-content>
-      <h3><span>Familia: </span> {{ bird.familia}}</h3>
+      <h3 class="weight-4"><span>Familia: </span> {{ bird.familia}}</h3>
       <p>
         {{ descripcionAve }}
       </p>
     </mat-card-content>
   
-    <mat-card-actions>
-      <button mat-button 
-              color="warn"
+    <mat-card-actions style="display:flex">
+      <button mat-stroked-button
+              color="primary"
               [routerLink]="['/birds', bird.id]">
         Leer más....
       </button>
-      <button mat-button color="accent"
+      <span class="spacer"></span>
+      <button mat-stroked-button color="accent"
               [routerLink]="['/birds/editar', bird.id]">
         Editar....
       </button>
