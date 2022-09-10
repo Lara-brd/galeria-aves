@@ -15,6 +15,9 @@ import { BirdsService } from '../../services/birds.service';
       width: 100%;
       border-radius:5px;
     }
+    .form-add-bird{
+      margin-top:50px;
+    }
   `]
 })
 export class AgregarComponent implements OnInit {

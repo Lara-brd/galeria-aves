@@ -1,4 +1,43 @@
-<mat-grid-list cols="1">
+
+<div class="wrapp" fxLayout="row" fxLayoutAlign="center center">
+  <div class="box-login" fxLayout="column">
+
+    <mat-form-field fxFlex="100">
+      <mat-label>Nombre usuario</mat-label>
+      <input matInput
+              type="text"
+              [(ngModel)]="loginInput.name"
+              required>
+      <mat-error *ngIf="loginInput.name.trim().length == 0">
+        Please enter a Name
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field fxFlex="100">
+      <mat-label>Password</mat-label>
+      <input matInput
+              type="password"
+              [(ngModel)]="loginInput.password">
+      <!-- <mat-error *ngIf="loginInput.nombre.trim().length == 0">
+        Please enter a Name
+      </mat-error> -->
+    </mat-form-field>
+
+  </div>
+
+  <button mat-raised-button 
+  color="primary"
+  (click)="login()">
+Ingresar
+</button>
+</div>
+
+
+
+
+
+
+<!-- <mat-grid-list cols="1">
   <mat-grid-tile>
     <button mat-raised-button 
             color="primary"
@@ -6,4 +45,4 @@
       Ingresar
     </button>
   </mat-grid-tile>
-</mat-grid-list>
+</mat-grid-list> -->

@@ -12,8 +12,8 @@ import { BirdsService } from '../../services/birds.service';
       width:100%;
       border-radius:5px;
     }
-    .content{
-      margin-top:50px;
+    button{
+      margin:20px;
     }
   `]
 })

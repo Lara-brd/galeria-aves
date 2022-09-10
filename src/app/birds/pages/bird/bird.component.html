@@ -1,51 +1,54 @@
-<mat-grid-list cols="1" *ngIf="!bird; else divBird">
-  <mat-grid-tile>
-    <!-- aqui el spinner-->
-    <mat-spinner></mat-spinner>
-  </mat-grid-tile>
-</mat-grid-list>
+<div class="m-width-1200 center p-2">
 
-<ng-template #divBird>
 
-  <div  fxLayout="row"
-        fxLayout.xs="column"
-        fxLagoutGap="30px">
-
-        <div fxFlex="50">
-          <h1>{{ bird.nombre }} <small>-{{bird.nombre_cientifico}}</small></h1>
-          <mat-divider></mat-divider>
-          <br>
-          <img [src]="bird | imagen" alt="">
-        </div>
-        <div fxFlex="50">
-          <h1>{{bird.familia}}</h1>
-          <mat-divider></mat-divider>
-
-          <div class="content">
-            
-            <p>
-              {{ bird.descripcion}}
-            </p>
+  <mat-grid-list cols="1" *ngIf="!bird; else divBird">
+    <mat-grid-tile>
+      <!-- aqui el spinner-->
+      <mat-spinner></mat-spinner>
+    </mat-grid-tile>
+  </mat-grid-list>
   
-            <mat-list>
-              <!-- <mat-list-item>{{ bird.descripcion}}</mat-list-item> -->
-              <mat-list-item>{{ bird.alimentacion}}</mat-list-item>
-              <mat-list-item>{{ bird.familia}}</mat-list-item>
-              <mat-list-item>{{ bird.nombre_cientifico}}</mat-list-item>
-            </mat-list>
+  <ng-template #divBird>
+    <h2 class="weight-4">{{ bird.nombre }} <small class="op-5">- {{bird.nombre_cientifico}}</small></h2>
+    <mat-divider></mat-divider>
+  
+    <div  fxLayout="row"
+          fxLayout.sm="column"
+          fxLayout.xs="column"
+          fxLagoutGap="30px"
+          class="content">
+  
+          <div fxFlex="50">
+            <br>
+            <img [src]="bird | imagen" alt="">
           </div>
+          <div fxFlex="50">
+            <div class="content">
+              <p class="p-2">
+                {{ bird.descripcion}}
+              </p>
+            </div>
+  
 
-          <br>
-          <button mat-button 
-                  color="warn"
-                  (click)="regresar()">
-            Regresar
-          </button>
-        </div>
+    
+              <mat-list class="op-5">
+                <mat-list-item>{{bird.alimentacion}}</mat-list-item>
+                <mat-list-item>{{ bird.familia}}</mat-list-item>
+                <mat-list-item>{{ bird.nombre_cientifico}}</mat-list-item>
+              </mat-list>
+            <br>
+            <button mat-raised-button
+                    color="accent"
+                    (click)="regresar()">
+              Regresar
+            </button>
+          </div>
+  
+    </div>
+  
+  </ng-template>
+</div>
 
-  </div>
-
-</ng-template>
 
 
 

@@ -26,7 +26,7 @@ export class AuthService {
     if(!localStorage.getItem('tokem')){
       return of(false);
     }
-    return this.http.get<Auth>(`${this.baseUrl}/user/1`)
+    return this.http.get<Auth>(`${this.baseUrl}/user/1122`)
       .pipe(
         map(auth => {
           this._auth = auth;
@@ -36,7 +36,7 @@ export class AuthService {
   }
   
   login(){
-    return this.http.get<Auth>(`${this.baseUrl}/user/1`)
+    return this.http.get<Auth>(`${this.baseUrl}/user/1122`)
     //aqui tengo el auth  y lo puedo almacenar en la propiedad
       .pipe(
         tap( auth => this._auth = auth),
