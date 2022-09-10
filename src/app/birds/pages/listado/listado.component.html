@@ -1,0 +1,23 @@
+<h1>Listado de Aves</h1>
+<mat-divider></mat-divider>
+<br>
+
+
+<!-- targetas enormes necesito trabajar en base a columnas -->
+
+<div  fxLayout="row wrap"
+      fxLayout.xs="column"
+      fxLayoutAlign="center"
+      fxLayoutGap="20px">
+
+  <div  fxFlex="30"  
+        fxFlex.lg="25"
+        fxFlex.sm="45"
+        *ngFor="let bird of birds">
+
+
+    <app-bird-tarjeta [bird]="bird"></app-bird-tarjeta>
+
+  </div>
+</div>
+

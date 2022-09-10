@@ -1,0 +1,50 @@
+/* You can add global styles to this file, and also import other style files */
+
+@use 'styles/palette';
+
+@use '@angular/material' as mat;
+@include mat.core();
+
+//defindicion de paletas
+$my-primary: mat.define-palette(palette.$green);
+$my-accent: mat.define-palette(palette.$yellow, A200, A100, A400);
+
+$my-theme: mat.define-dark-theme((
+  color:(
+    primary: $my-primary,
+    accent: $my-accent
+  )
+));
+
+@include mat.all-component-themes($my-theme);
+
+
+
+
+
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.spacer{
+  flex:1 1 auto;
+}
+
+
+::-webkit-scrollbar {
+  width: 4px;
+  overflow-y: scroll;
+  background: rgba(128, 128, 128, 0);
+  box-shadow: inset 0 0 4px #70707000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(20, 20, 21);
+  border-radius: 10px;
+}
+
+
+.shadow{
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
