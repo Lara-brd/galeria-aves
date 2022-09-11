@@ -15,8 +15,12 @@ export class AuthService {
   private baseUrl:string = environment.baseUrl;
   private _auth:Auth | undefined;
 
-  get auth(){
+  public get auth(){
     return {...this._auth!}
+  }
+
+  public set authUser(value:Auth){
+    this._auth = value
   }
 
   constructor( private http:HttpClient) { }
@@ -26,17 +30,22 @@ export class AuthService {
     if(!localStorage.getItem('tokem')){
       return of(false);
     }
-    return this.http.get<Auth>(`${this.baseUrl}/user/1122`)
+
+    return this.http.get<Auth>(`${this.baseUrl}/user/${this.auth.id}`)
+    // return this.http.get<Auth>(`${this.baseUrl}/user/1122`)
       .pipe(
         map(auth => {
-          this._auth = auth;
+          if(!auth.id){
+            return false;
+          }
           return true;
         })
       );
   }
   
   login(){
-    return this.http.get<Auth>(`${this.baseUrl}/user/1122`)
+    return this.http.get<Auth>(`${this.baseUrl}/user/${this.auth.id}`)
+
     //aqui tengo el auth  y lo puedo almacenar en la propiedad
       .pipe(
         tap( auth => this._auth = auth),
@@ -44,7 +53,13 @@ export class AuthService {
       );
   }
 
+  setLogin(value:Auth){
+    this._auth = value;
+  }
+
+
   logout(){
     this._auth = undefined;
   }
+
 }

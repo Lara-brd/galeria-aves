@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { Auth } from '../../interfaces/auth.interface';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
@@ -19,13 +20,11 @@ import { AuthService } from '../../services/auth.service';
 })
 export class LoginComponent  {
 
-  loginInput = {
-    name:'',
-    password:''
+  loginInput:Auth = {
+    id:'',
+    email:'',
+    usuario:''
   }
-
-
-  
 
   constructor(  private router:Router,
                 private authService: AuthService) { }
@@ -33,11 +32,12 @@ export class LoginComponent  {
   login(){
     //ir al backend
     //un usuario
+    this.authService.setLogin(this.loginInput)
     this.authService.login()
       .subscribe(resp =>{
         console.log(resp);
 
-        if(resp.id){
+        if(resp.id == this.loginInput.id){
           this.router.navigate(['/birds']);
         }
       })
