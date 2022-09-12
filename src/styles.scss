@@ -68,6 +68,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif }
   background-color: var(--primary);
 }
 
+.border-primary{
+  border:1px solid var(--primary); 
+}
+
 
 .title-brd-1{
   @include text(var(--primary), 2.5rem);

@@ -1,35 +1,48 @@
 
-<div class="wrapp" fxLayout="row" fxLayoutAlign="center center">
-  <div class="box-login" fxLayout="column">
+<div class="wrapp center" fxLayoutAlign="center center">
+
+  <div fxLayout="column" class="box-login border-primary shadow" fxFlex="50" fxFlex.xs = "90">
 
     <mat-form-field fxFlex="100">
       <mat-label>Nombre usuario</mat-label>
       <input matInput
               type="text"
-              [(ngModel)]="loginInput.name"
-              required>
-      <mat-error *ngIf="loginInput.name.trim().length == 0">
+              [(ngModel)]="loginInput.usuario"
+              required
+              (input)="hayError =false">
+      <mat-error *ngIf="loginInput.usuario.trim().length == 0">
         Please enter a Name
       </mat-error>
     </mat-form-field>
 
-    <mat-form-field fxFlex="100">
+    <mat-form-field>
       <mat-label>Password</mat-label>
       <input matInput
               type="password"
-              [(ngModel)]="loginInput.password">
-      <!-- <mat-error *ngIf="loginInput.nombre.trim().length == 0">
-        Please enter a Name
-      </mat-error> -->
+              [(ngModel)]="loginInput.id"
+              (input)="hayError =false"
+              required>
+      <mat-error *ngIf="loginInput.id.trim().length == 0">
+        Please enter a Password
+      </mat-error>
     </mat-form-field>
+
+    
+    <button mat-raised-button 
+    color="primary"
+    (click)="login()"
+    type="submit">
+      Ingresar
+    </button> 
+
+    <div *ngIf="hayError">
+      JDJFDLJODETE
+    </div>
 
   </div>
 
-  <button mat-raised-button 
-  color="primary"
-  (click)="login()">
-Ingresar
-</button>
+
+
 </div>
 
 
@@ -37,7 +50,59 @@ Ingresar
 
 
 
-<!-- <mat-grid-list cols="1">
+
+
+
+
+
+
+
+
+
+
+<!-- 
+<div class="wrapp" fxLayout="row" fxLayoutAlign="center center">
+  <div class="box-login" fxLayout="column">
+
+    <mat-form-field fxFlex="100">
+      <mat-label>Nombre usuario</mat-label>
+      <input matInput
+              type="text"
+              [(ngModel)]="loginInput.usuario"
+              required>
+      <mat-error *ngIf="loginInput.usuario.trim().length == 0">
+        Please enter a Name
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Password</mat-label>
+      <input matInput
+              type="password"
+              [(ngModel)]="loginInput.id"
+              required>
+      <mat-error *ngIf="loginInput.id.trim().length == 0">
+        Please enter a Password
+      </mat-error>
+    </mat-form-field>
+
+    <button mat-raised-button 
+    color="primary"
+    (click)="login()"
+    type="submit">
+      Ingresar
+    </button>
+
+  </div>
+
+</div>
+
+
+
+
+
+
+<mat-grid-list cols="1">
   <mat-grid-tile>
     <button mat-raised-button 
             color="primary"
@@ -45,4 +110,4 @@ Ingresar
       Ingresar
     </button>
   </mat-grid-tile>
-</mat-grid-list> -->
+</mat-grid-list> --> 

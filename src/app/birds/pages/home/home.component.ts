@@ -15,19 +15,19 @@ import { AuthService } from 'src/app/auth/services/auth.service';
 export class HomeComponent implements OnInit {
 
   get auth(){
-    return this.authService.auth;
+    return this._authService.auth;
   }
 
   constructor(  private router:Router,
-                private authService:AuthService  ) { }
+                private _authService:AuthService  ) { }
 
   ngOnInit(): void {
   }
-
+  
   logout(){
-    this.router.navigate(['./auth'])
+    this._authService.logout();
+    this.router.navigate(['./auth']);
   }
-
-
+  
 
 }
