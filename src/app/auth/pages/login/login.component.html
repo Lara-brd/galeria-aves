@@ -93,11 +93,13 @@
       <mat-label>Password</mat-label>
       <input matInput
               type="password"
+
               [(ngModel)]="loginInput.id"
               required>
       <mat-error *ngIf="loginInput.id.trim().length == 0">
         Please enter a Password
       </mat-error>
+
     </mat-form-field>
 
     <button mat-raised-button 
