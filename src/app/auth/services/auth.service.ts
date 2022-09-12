@@ -32,16 +32,7 @@ export class AuthService  implements OnInit {
     if(!localStorage.getItem('tokem')){
       return of(false);
     }
-    
     return of(true);
-
-    // return this.http.get<Auth>(`${this.baseUrl}/user/${this._auth?.id}`)
-    //   .pipe(
-    //     map(auth => {
-    //       this._auth = auth;
-    //       return true;
-    //     })
-    //   );
   }
   
   login(){
@@ -55,7 +46,6 @@ export class AuthService  implements OnInit {
           }
         })
       );
-      // localStorage.setItem('tokem', auth.id)
   }
 
   setLogin(log:Auth){
@@ -81,6 +71,17 @@ export class AuthService  implements OnInit {
   logout(){
     this._auth = undefined;
     localStorage.removeItem('tokem')
-
   }
+
+  registerUser(user:Auth):Observable<Auth>{
+
+
+    return this.http.post<Auth>(`${this.baseUrl}/user`, user);
+  }
+
+  // agregarBird(bird:Bird):Observable<Bird>{
+  //   return this.http.post<Bird>(`${this.baseUrl}/birds`, bird)
+  // }
+  
+
 }

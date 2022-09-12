@@ -47,7 +47,7 @@ export class AgregarComponent implements OnInit {
   ]
 
 
-  // inicializo bird publisher:tipado.pordefecto
+  // inicializo bird :tipado.pordefecto
   bird:Bird = {
     nombre:'',
     nombre_cientifico:'',
@@ -56,6 +56,8 @@ export class AgregarComponent implements OnInit {
     alt_img:'',
     familia:Familia.corvidae,
   }
+
+
 
   /////////////////////////////////////////////////////
 
@@ -66,6 +68,9 @@ export class AgregarComponent implements OnInit {
                 public dialog:MatDialog) { }
 
 /////////////////////////////////////////////////////////
+
+
+
 
   ngOnInit(): void {
     if( !this.router.url.includes('editar')){
@@ -78,12 +83,13 @@ export class AgregarComponent implements OnInit {
       .subscribe(bird => this.bird = bird)
     }
 
+
+
   guardar(){
 
     if(this.bird.nombre.trim().length === 0){
       return;
     }
-
     //actualizar
     if(this.bird.id){
       this.birdsService.actualizarBird(this.bird)

@@ -1,1 +1,57 @@
-<p>registro works!</p>
+
+<div class="wrapp center" fxLayoutAlign="center center">
+
+  <div fxLayout="column" class="box-login border-primary shadow" fxFlex="50" fxFlex.xs = "90">
+
+    <mat-form-field fxFlex="100">
+      <mat-label>Nombre usuario</mat-label>
+      <input matInput
+              type="text"
+              [(ngModel)]="newUser.usuario"
+              required>
+      <mat-error *ngIf="newUser.usuario.trim().length == 0">
+        Please enter a Name
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field fxFlex="100">
+      <mat-label>Email</mat-label>
+      <input matInput
+              type="text"
+              [(ngModel)]="newUser.email"
+              required>
+      <mat-error *ngIf="newUser.usuario.trim().length == 0">
+        Please enter a Name
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Password</mat-label>
+      <input matInput
+              [type]="hide ? 'password' : 'text'"
+              [(ngModel)]="newUser.id"
+              required>
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+      <mat-error *ngIf="newUser.id.trim().length == 0">
+        Please enter a Password
+      </mat-error>
+    </mat-form-field>
+    
+    <button mat-raised-button 
+    color="primary"
+    (click)="onNewUser()"
+    type="submit">
+      Registrarme
+    </button> 
+
+
+  </div>
+  
+</div>
+
+
+
+
+

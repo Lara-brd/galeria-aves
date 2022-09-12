@@ -15,12 +15,22 @@ import { AuthService } from '../../services/auth.service';
     }
     .box-login{
       border-radius:5px;
-      padding:5%;
+      padding:3%;
       max-width:500px;
+      position:relative;
+    }
+    .error-message{
+      position:absolute;
+      bottom:5px;
+      font-size:.8rem;
     }
     button{
+      padding:0;
+    }
+    .btn-ingresar{
       margin-top:20px;
     }
+
   `]
 })
 export class LoginComponent  {
@@ -31,9 +41,10 @@ export class LoginComponent  {
   }
 
   hayError:boolean = false;
+  mensaje:string ='';
 
+  hide = true;
 
-  
 
   constructor(  private router:Router,
                 private authService: AuthService) { }
@@ -41,19 +52,30 @@ export class LoginComponent  {
   login(){
     //ir al backend
     //un usuario
-
+    if(!(this.loginInput.id && this.loginInput.usuario)){
+      this.messageGeneralForm('Campos vacios')
+    }
     this.authService.setLogin(this.loginInput)
     this.authService.login()
       .subscribe({
         error:()=>{ 
           this.authService.resetLogin(); 
-          this.hayError = true},
+          this.messageGeneralForm('Usuario o contraseña no válido')},
         next:(resp)=>{
           if(resp.id && resp.usuario.toUpperCase() === this.loginInput.usuario.toUpperCase()){
             this.router.navigate(['/birds']);
           }
         }
       })
+  }
+
+  messageGeneralForm(message:string){
+    this.hayError = true;
+    this.mensaje = message;
+  }
+
+  goToRegister(){
+    this.router.navigate(['./auth/registro'])
   }
 
 
