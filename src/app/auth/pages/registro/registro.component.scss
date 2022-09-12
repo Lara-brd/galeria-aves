@@ -1,0 +1,24 @@
+.wrapp{
+  height:100vh;
+  margin:10px auto;
+  background-image: url(../../../../assets/birds/fondo2.jpg); 
+  background-size: cover; 
+  background-repeat:no-repeat;    
+}
+.box-login{
+  border-radius:5px;
+  padding:5%;
+  max-width:500px;
+  position:relative;
+  background-color: #303030;
+}
+.error-message{
+  position:absolute;
+  bottom:5px;
+  font-size:.8rem;
+}
+
+button{
+  margin-top:20px;
+  margin-bottom:0;
+}

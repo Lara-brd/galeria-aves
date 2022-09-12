@@ -6,32 +6,7 @@ import { AuthService } from '../../services/auth.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styles: [`
-
-    .wrapp{
-      height:70vh;
-      margin:10px auto;
-      max-width:1000px;      
-    }
-    .box-login{
-      border-radius:5px;
-      padding:3%;
-      max-width:500px;
-      position:relative;
-    }
-    .error-message{
-      position:absolute;
-      bottom:5px;
-      font-size:.8rem;
-    }
-    button{
-      padding:0;
-    }
-    .btn-ingresar{
-      margin-top:20px;
-    }
-
-  `]
+  styleUrls: ['./login.component.scss']
 })
 export class LoginComponent  {
 
@@ -59,7 +34,7 @@ export class LoginComponent  {
     this.authService.login()
       .subscribe({
         error:()=>{ 
-          this.authService.resetLogin(); 
+          this.authService.resetLogin(),
           this.messageGeneralForm('Usuario o contraseña no válido')},
         next:(resp)=>{
           if(resp.id && resp.usuario.toUpperCase() === this.loginInput.usuario.toUpperCase()){

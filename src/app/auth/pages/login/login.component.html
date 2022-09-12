@@ -1,5 +1,7 @@
 
-<div class="wrapp center" fxLayoutAlign="center center">
+<div class="wrapp center" fxLayoutAlign="center center" fullscreen>
+
+
   
   <div fxLayout="column" class="box-login border-primary shadow" fxFlex="50" fxFlex.xs = "90">
 
@@ -48,10 +50,10 @@
     color="primary"
     (click)="login()"
     type="submit">
-      Ingresar
+      Login
     </button> 
 
-    <mat-error class="error-message" *ngIf="hayError">
+    <mat-error class="error-message pad" *ngIf="hayError">
       **{{mensaje}}
     </mat-error>
   </div>
