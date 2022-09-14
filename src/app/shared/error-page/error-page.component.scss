@@ -1,0 +1,28 @@
+
+.wrapp-ini{
+  padding-top:10%;
+  height: 100vh;
+  background: #659999;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #303030, var(--primary));  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #303030, var(--primary)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.exple-ripple-container {
+  background-color:#303030;
+
+  cursor: pointer;
+  text-align: center;
+
+  max-width: 500px;
+  height: 300px;
+  line-height: 300px;
+
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+
+  -webkit-user-drag: none;
+  -webkit-tap-highlight-color: transparent;
+}
+

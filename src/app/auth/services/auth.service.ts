@@ -40,11 +40,14 @@ export class AuthService  implements OnInit {
     //aqui tengo el auth  y lo puedo almacenar en la propiedad
       .pipe(
         tap( auth => {
+         
+
           if(auth.id){
             localStorage.setItem('tokem', auth.id);
             this._auth = auth;
           }
         })
+
       );
   }
 
@@ -74,8 +77,6 @@ export class AuthService  implements OnInit {
   }
 
   registerUser(user:Auth):Observable<Auth>{
-
-
     return this.http.post<Auth>(`${this.baseUrl}/user`, user);
   }
 

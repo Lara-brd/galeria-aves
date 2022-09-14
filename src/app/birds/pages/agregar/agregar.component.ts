@@ -82,7 +82,7 @@ export class AgregarComponent implements OnInit {
     }
     this.activatedRoute.params
       .pipe(
-        switchMap( ({id})=> this.birdsService.getHeroePorId(id) )
+        switchMap( ({id})=> this.birdsService.getBirdPorId(id) )
       )  
       .subscribe(bird => this.bird = bird)
     }

@@ -21,7 +21,7 @@ export class BirdsService {
     return this.http.get<Bird[]>(`${this.baseUrl}/birds`)
   }
 
-  getHeroePorId(id:string):Observable<Bird>{
+  getBirdPorId(id:string):Observable<Bird>{
     return this.http.get<Bird>(`${this.baseUrl}/birds/${ id }`);
   }
 

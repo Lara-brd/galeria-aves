@@ -1,37 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 
-@use 'styles/palette';
-
-@use '@angular/material' as mat;
-@include mat.core();
-
-//defindicion de paletas
-$my-primary: mat.define-palette(palette.$green);
-$my-accent: mat.define-palette(palette.$yellow, A200, A100, A400);
-// $my-typography:mat.define-typography-config(
-
-// );
-
-
-$my-theme: mat.define-dark-theme((
-  color:(
-    primary: $my-primary,
-    accent: $my-accent
-  ),
-  // typography: $my-typography,
-
-));
-
-@include mat.all-component-themes($my-theme);
+@use 'styles/theme';
 
 :root {
   // background: pink;
   --primary:#718C85;
   --accent: #e8b623;
 }
-
-
-
 
 
 html, body { height: 100%; }
@@ -82,7 +57,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif }
 }
 
 .title-brd-2{
-  @include text(rgba(255, 255, 255, 0.851), 2.5rem);
+  @include text(var(--primary), 1.5rem);
 }
 
 .weight-4{

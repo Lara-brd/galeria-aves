@@ -8,14 +8,14 @@ import { Bird } from '../../interfaces/birds.interface.ts/birds.interface';
   templateUrl: './bird-tarjeta.component.html',
   styles: [`
     mat-card{
-      margin-top:20px;
+      margin:10px;
     }
   `]
 })
 export class BirdTarjetaComponent {
 
   get descripcionAve(){
-    const desc = this.bird.descripcion.slice(0,50);
+    const desc = this.bird.descripcion.slice(0,80);
     return `${desc}...`
   
   }

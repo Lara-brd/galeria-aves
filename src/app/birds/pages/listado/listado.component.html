@@ -12,12 +12,14 @@
 <div  fxLayout="row wrap"
       fxLayout.xs="column"
       fxLayoutAlign="center"
-      fxLayoutGap="20px">
+      class="m-width-1200 center"
+      >
 
   <div  fxFlex="30"  
         fxFlex.lg="25"
         fxFlex.sm="45"
         *ngFor="let bird of birds">
+        
 
 
     <app-bird-tarjeta [bird]="bird"></app-bird-tarjeta>

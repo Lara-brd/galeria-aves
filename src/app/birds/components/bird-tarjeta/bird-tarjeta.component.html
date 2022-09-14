@@ -6,7 +6,7 @@
     </mat-card-header>
   
     <!-- <img mat-card-image src="assets/heroes/{{bird.id}}.jpg"> -->
-    <img mat-card-image [src]="bird | imagen">
+    <img mat-card-image [src]="bird | imagen" onerror="this.src='./../../../../assets/no-image.png'">
   
     <mat-card-content>
       <h3 class="weight-4"><span>Familia: </span> {{ bird.familia}}</h3>

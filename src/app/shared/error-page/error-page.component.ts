@@ -1,16 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
 
 @Component({
   selector: 'app-error-page',
   templateUrl: './error-page.component.html',
-  styles: [
-  ]
+  styleUrls: ['./error-page.component.scss']
 })
-export class ErrorPageComponent implements OnInit {
+export class ErrorPageComponent  {
+  centered = false;
+  disabled = false;
+  unbounded = true;
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+  radius: number = 50;
+  color: string = 'rgba(255, 255, 255, 0.3)';
 
 }

@@ -30,7 +30,7 @@ export class BirdComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.params
       .pipe(
-        switchMap(( { id } )=> this.heroesService.getHeroePorId(id))
+        switchMap(( { id } )=> this.heroesService.getBirdPorId(id))
       )
       .subscribe(bird => this.bird = bird)
 

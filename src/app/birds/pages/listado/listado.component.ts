@@ -7,9 +7,11 @@ import { BirdsService } from '../../services/birds.service';
   templateUrl: './listado.component.html',
   styles: [`
     h1{
-      width:1200px;
+
+      padding-left:10px;
+
     }
-  
+
   `]
 })
 export class ListadoComponent implements OnInit {
