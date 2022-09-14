@@ -9,8 +9,9 @@ import { BirdsService } from '../../services/birds.service';
   selector: 'app-buscar',
   templateUrl: './buscar.component.html',
   encapsulation:ViewEncapsulation.None,
-  styles: [
-  ]
+  styles: [`
+  
+  `]
 })
 export class BuscarComponent implements OnInit {
 

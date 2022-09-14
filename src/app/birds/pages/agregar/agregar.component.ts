@@ -25,8 +25,20 @@ export class AgregarComponent implements OnInit {
 
   familias = [
     {
+      id:'Ardeidae',
+      desc:'Ardeidae'
+    },
+    {
       id:'Corvidae',
       desc:'Corvidae'
+    },
+    {
+      id:'Estrildidae',
+      desc:'Estrildidae'
+    },
+    {
+      id:'Falconidae',
+      desc:'Falconidae'
     },
     {
       id:'Muscicapidae',
@@ -35,14 +47,6 @@ export class AgregarComponent implements OnInit {
     {
       id:'Paridae',
       desc:'Paridae'
-    },
-    {
-      id:'Falconidae',
-      desc:'Falconidae'
-    },
-    {
-      id:'Estrildidae',
-      desc:'Estrildidae'
     }
   ]
 

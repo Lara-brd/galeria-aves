@@ -27,6 +27,7 @@ $my-theme: mat.define-dark-theme((
 :root {
   // background: pink;
   --primary:#718C85;
+  --accent: #e8b623;
 }
 
 
@@ -35,7 +36,6 @@ $my-theme: mat.define-dark-theme((
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif }
-
 
 
 ::-webkit-scrollbar {
@@ -66,6 +66,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif }
 
 .bgc-primary{
   background-color: var(--primary);
+}
+
+.bgc-accent{
+  background-color: var(--accent);
 }
 
 .border-primary{

@@ -1,14 +1,14 @@
 
 <div class="m-width-1200 center">
 
-  <h2 class=".title-brd-2">
+  <h2 class=".title-brd-2 weight-4">
       {{ 
         (bird.id)
           ? 'Editar'
           : 'Nueva'
       }}
       Ave 
-    <small>{{bird.nombre}}</small>
+    <small class="weight-4 op-5">{{bird.nombre}}</small>
   </h2>
   
   <mat-divider></mat-divider>
@@ -46,10 +46,19 @@
   
       <mat-form-field>
         <mat-label>Descripción</mat-label>
-        <input matInput
+        <!-- <input matInput
                 type="text"
                 required
-                [(ngModel)]="bird.descripcion">
+                [(ngModel)]="bird.descripcion"
+                > -->
+        <textarea 
+        matInput
+        type="text"
+        [(ngModel)]="bird.descripcion"
+        required>
+
+        </textarea>
+
       </mat-form-field>
   
       <mat-form-field>
@@ -93,7 +102,7 @@
         <button mat-raised-button 
                 color="primary"
                 (click)="guardar()">
-          {{(bird.id) ? 'ACTUALIZAR': 'CREAR'}}
+          {{(bird.id) ? 'Actualizar': 'Crear'}}
         </button>
   
         <span class="spacer"></span>
@@ -101,8 +110,8 @@
       <button *ngIf="bird.id"
               mat-raised-button
               (click)="borrarBird()">
-        <mat-icon>remove</mat-icon>
-        Borrar
+        <mat-icon>delete</mat-icon>
+          Eliminar
       </button>
     </div>
   

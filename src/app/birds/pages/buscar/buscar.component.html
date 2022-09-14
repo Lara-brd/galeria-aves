@@ -1,10 +1,10 @@
-<div fxLayout="column">
+<div fxLayout="column" class="wrapp-buscador center m-width-1200">
   <div>
-    <h1>Buscador de héroes</h1>
+    <h2 class="weight-4">Buscador de Aves</h2>
     <mat-divider></mat-divider>
   </div>
   <div fxLayout="column">
-    <h3>Buscador</h3>
+    <h3 class="weight-4">Buscador</h3>
 
     <mat-form-field>
       <input type="text"
@@ -28,10 +28,6 @@
       </mat-autocomplete>
     </mat-form-field>
 
-  </div>
-
-  <div>
-    <pre>{{ birdSeleccionado | json }}</pre>
   </div>
 
   <div *ngIf="birdSeleccionado">
